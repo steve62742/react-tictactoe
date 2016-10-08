@@ -1,0 +1,33 @@
+{
+  "name": "niometrics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "*",
+    "babel-standalone": "*",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "bootstrap": "^3.3.7",
+    "bower": "*",
+    "compression": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-session": "*",
+    "grunt": "*",
+    "jshint": "*",
+    "lodash": "*",
+    "moment": "*",
+    "moment-timezone": "*",
+    "mongoose": "*",
+    "npm": "*",
+    "randomstring": "*",
+    "react": "*",
+    "react-dom": "*"
+  }
+}
