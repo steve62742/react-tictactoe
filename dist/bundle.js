@@ -21679,7 +21679,7 @@
 	    render: function render() {
 	        return React.createElement(
 	            "div",
-	            { onClick: this.handleClick, className: "col-md-4 cell " },
+	            { onClick: this.handleClick, className: "col-sm-4 cell " },
 	            React.createElement("img", { className: this.getClasses('N'), src: "public/img/clear.png" }),
 	            React.createElement("img", { className: this.getClasses('O'), src: "public/img/o.png" }),
 	            React.createElement("img", { className: this.getClasses('X'), src: "public/img/x.png" })
