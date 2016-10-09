@@ -10,7 +10,7 @@ var Alert = require('react-s-alert').default;
 var Game = React.createClass({
     getInitialState: function() {
         return {
-            status: " ",
+            status: 1,
             turn: 0,
             clicks: 0,
             tiles : [
@@ -36,6 +36,7 @@ var Game = React.createClass({
             this.setState({
                 clicks: 0 ,
                 turn : 0 ,
+                status : 1,
                 tiles : newtiles
             }  );
 
@@ -105,48 +106,79 @@ var Game = React.createClass({
 
     checkWin : function () {
         if ( ( this.state.tiles[0].status == this.state.tiles[1].status && this.state.tiles[0].status  == this.state.tiles[2].status ) && ( this.state.tiles[0].status != "N" ) ){
+            this.setState({
+                status : 0
+            }  );
             if ( this.state.tiles[0].status =="O" ){
                 this.alertWin("player 2");
             }else{
                 this.alertWin("player 1");
             }
         }else        if ( ( this.state.tiles[3].status == this.state.tiles[4].status && this.state.tiles[3].status  == this.state.tiles[5].status ) && ( this.state.tiles[3].status != "N" ) ){
+
+            this.setState({
+                status : 0
+            }  );
             if ( this.state.tiles[3].status =="O" ){
                 this.alertWin("player 2");
             }else{
                 this.alertWin("player 1");
             }
         }else        if ( ( this.state.tiles[6].status == this.state.tiles[7].status && this.state.tiles[6].status  == this.state.tiles[8].status ) && ( this.state.tiles[6].status != "N" ) ){
+
+            this.setState({
+                status : 0
+            }  );
             if ( this.state.tiles[6].status =="O" ){
                 this.alertWin("player 2");
             }else{
                 this.alertWin("player 1");
             }
         }else        if ( ( this.state.tiles[0].status == this.state.tiles[4].status && this.state.tiles[0].status  == this.state.tiles[8].status ) && ( this.state.tiles[0].status != "N" ) ){
+
+            this.setState({
+                status : 0
+            }  );
             if ( this.state.tiles[0].status =="O" ){
                 this.alertWin("player 2");
             }else{
                 this.alertWin("player 1");
             }
         }else        if ( ( this.state.tiles[2].status == this.state.tiles[4].status && this.state.tiles[2].status  == this.state.tiles[6].status ) && ( this.state.tiles[2].status != "N" ) ){
+
+            this.setState({
+                status : 0
+            }  );
             if ( this.state.tiles[2].status =="O" ){
                 this.alertWin("player 2");
             }else{
                 this.alertWin("player 1");
             }
         }else        if ( ( this.state.tiles[0].status == this.state.tiles[3].status && this.state.tiles[0].status  == this.state.tiles[6].status ) && ( this.state.tiles[0].status != "N" ) ){
+
+            this.setState({
+                status : 0
+            }  );
             if ( this.state.tiles[0].status =="O" ){
                 this.alertWin("player 2");
             }else{
                 this.alertWin("player 1");
             }
         }else        if ( ( this.state.tiles[1].status == this.state.tiles[4].status && this.state.tiles[1].status  == this.state.tiles[7].status ) && ( this.state.tiles[1].status != "N" ) ){
+
+            this.setState({
+                status : 0
+            }  );
             if ( this.state.tiles[1].status =="O" ){
                 this.alertWin("player 2");
             }else{
                 this.alertWin("player 1");
             }
         }else        if ( ( this.state.tiles[2].status == this.state.tiles[5].status && this.state.tiles[2].status  == this.state.tiles[8].status ) && ( this.state.tiles[2].status != "N" ) ){
+
+            this.setState({
+                status : 0
+            }  );
             if ( this.state.tiles[2].status =="O" ){
                 this.alertWin("player 2");
             }else{
@@ -161,6 +193,11 @@ var Game = React.createClass({
             this.state.tiles[0].status == this.state.tiles[7].status &&
             this.state.tiles[0].status == this.state.tiles[8].status &&
             this.state.tiles[0].status != "N"  ) {
+
+
+            this.setState({
+                status : 0
+            }  );
             this.alertWin("No one");
         }
 

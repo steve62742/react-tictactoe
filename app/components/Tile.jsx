@@ -8,19 +8,24 @@ var TileBox = React.createClass({
   },
 
     handleClick: function() {
-        if (this.props.data.status == "N"){
-            this.props.onSelect(this.props.data.number);
-            if ( this.props.parentState.turn == 0 ){
-                this.setState({
-                    imgpath : "img/x.png"
-                });
+        if (this.props.parentState.status == 1){
+
+
+            if (this.props.data.status == "N"){
+                this.props.onSelect(this.props.data.number);
+                if ( this.props.parentState.turn == 0 ){
+                    this.setState({
+                        imgpath : "img/x.png"
+                    });
+                }else{
+                    this.setState({
+                        imgpath : "img/o.png"
+                    });
+                }
             }else{
-                this.setState({
-                    imgpath : "img/o.png"
-                });
+                this.props.onSelect(-1);
             }
-        }else{
-            this.props.onSelect(-1);
+
         }
     },
     getClasses : function(status){

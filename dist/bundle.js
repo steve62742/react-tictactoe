@@ -21451,7 +21451,7 @@
 
 	    getInitialState: function getInitialState() {
 	        return {
-	            status: " ",
+	            status: 1,
 	            turn: 0,
 	            clicks: 0,
 	            tiles: [{ number: 0, status: "N" }, { number: 1, status: "N" }, { number: 2, status: "N" }, { number: 3, status: "N" }, { number: 4, status: "N" }, { number: 5, status: "N" }, { number: 6, status: "N" }, { number: 7, status: "N" }, { number: 8, status: "N" }]
@@ -21467,6 +21467,7 @@
 	        this.setState({
 	            clicks: 0,
 	            turn: 0,
+	            status: 1,
 	            tiles: newtiles
 	        });
 	    },
@@ -21521,54 +21522,89 @@
 
 	    checkWin: function checkWin() {
 	        if (this.state.tiles[0].status == this.state.tiles[1].status && this.state.tiles[0].status == this.state.tiles[2].status && this.state.tiles[0].status != "N") {
+	            this.setState({
+	                status: 0
+	            });
 	            if (this.state.tiles[0].status == "O") {
 	                this.alertWin("player 2");
 	            } else {
 	                this.alertWin("player 1");
 	            }
 	        } else if (this.state.tiles[3].status == this.state.tiles[4].status && this.state.tiles[3].status == this.state.tiles[5].status && this.state.tiles[3].status != "N") {
+
+	            this.setState({
+	                status: 0
+	            });
 	            if (this.state.tiles[3].status == "O") {
 	                this.alertWin("player 2");
 	            } else {
 	                this.alertWin("player 1");
 	            }
 	        } else if (this.state.tiles[6].status == this.state.tiles[7].status && this.state.tiles[6].status == this.state.tiles[8].status && this.state.tiles[6].status != "N") {
+
+	            this.setState({
+	                status: 0
+	            });
 	            if (this.state.tiles[6].status == "O") {
 	                this.alertWin("player 2");
 	            } else {
 	                this.alertWin("player 1");
 	            }
 	        } else if (this.state.tiles[0].status == this.state.tiles[4].status && this.state.tiles[0].status == this.state.tiles[8].status && this.state.tiles[0].status != "N") {
+
+	            this.setState({
+	                status: 0
+	            });
 	            if (this.state.tiles[0].status == "O") {
 	                this.alertWin("player 2");
 	            } else {
 	                this.alertWin("player 1");
 	            }
 	        } else if (this.state.tiles[2].status == this.state.tiles[4].status && this.state.tiles[2].status == this.state.tiles[6].status && this.state.tiles[2].status != "N") {
+
+	            this.setState({
+	                status: 0
+	            });
 	            if (this.state.tiles[2].status == "O") {
 	                this.alertWin("player 2");
 	            } else {
 	                this.alertWin("player 1");
 	            }
 	        } else if (this.state.tiles[0].status == this.state.tiles[3].status && this.state.tiles[0].status == this.state.tiles[6].status && this.state.tiles[0].status != "N") {
+
+	            this.setState({
+	                status: 0
+	            });
 	            if (this.state.tiles[0].status == "O") {
 	                this.alertWin("player 2");
 	            } else {
 	                this.alertWin("player 1");
 	            }
 	        } else if (this.state.tiles[1].status == this.state.tiles[4].status && this.state.tiles[1].status == this.state.tiles[7].status && this.state.tiles[1].status != "N") {
+
+	            this.setState({
+	                status: 0
+	            });
 	            if (this.state.tiles[1].status == "O") {
 	                this.alertWin("player 2");
 	            } else {
 	                this.alertWin("player 1");
 	            }
 	        } else if (this.state.tiles[2].status == this.state.tiles[5].status && this.state.tiles[2].status == this.state.tiles[8].status && this.state.tiles[2].status != "N") {
+
+	            this.setState({
+	                status: 0
+	            });
 	            if (this.state.tiles[2].status == "O") {
 	                this.alertWin("player 2");
 	            } else {
 	                this.alertWin("player 1");
 	            }
 	        } else if (this.state.tiles[0].status == this.state.tiles[1].status && this.state.tiles[0].status == this.state.tiles[2].status && this.state.tiles[0].status == this.state.tiles[3].status && this.state.tiles[0].status == this.state.tiles[4].status && this.state.tiles[0].status == this.state.tiles[5].status && this.state.tiles[0].status == this.state.tiles[6].status && this.state.tiles[0].status == this.state.tiles[7].status && this.state.tiles[0].status == this.state.tiles[8].status && this.state.tiles[0].status != "N") {
+
+	            this.setState({
+	                status: 0
+	            });
 	            this.alertWin("No one");
 	        }
 	    },
@@ -21618,19 +21654,22 @@
 	    },
 
 	    handleClick: function handleClick() {
-	        if (this.props.data.status == "N") {
-	            this.props.onSelect(this.props.data.number);
-	            if (this.props.parentState.turn == 0) {
-	                this.setState({
-	                    imgpath: "img/x.png"
-	                });
+	        if (this.props.parentState.status == 1) {
+
+	            if (this.props.data.status == "N") {
+	                this.props.onSelect(this.props.data.number);
+	                if (this.props.parentState.turn == 0) {
+	                    this.setState({
+	                        imgpath: "img/x.png"
+	                    });
+	                } else {
+	                    this.setState({
+	                        imgpath: "img/o.png"
+	                    });
+	                }
 	            } else {
-	                this.setState({
-	                    imgpath: "img/o.png"
-	                });
+	                this.props.onSelect(-1);
 	            }
-	        } else {
-	            this.props.onSelect(-1);
 	        }
 	    },
 	    getClasses: function getClasses(status) {
