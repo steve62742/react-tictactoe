@@ -1,7 +1,6 @@
-# travelmap-node
+# react-tictactoe
 
-Node Application for serving the API that will communicate with the Travel Map Android App
-
+A Sample application using React library, implementing a tic-tac-toe game.
 
 ### Installation
 
@@ -9,5 +8,3 @@ Node Application for serving the API that will communicate with the Travel Map A
 $ npm install
 $ node server.js
 ```
-
-# react-tictactoe

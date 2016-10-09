@@ -1,0 +1,45 @@
+.cell{
+    background-color: #F4F6F3;
+    padding:20px;
+    border: black;
+    border-style: solid;
+    height:200px;
+}
+
+.centerimg{
+    width:auto;
+    height:100%;
+    margin:auto;
+      position:absolute;
+      left:25%;
+      top:10%;
+      bottom:10%;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.headercell{
+    background-color: #7499A6;
+    min-height: 100px;
+    width:100%;
+    padding:10px;
+}
+
+body{
+    background-color: #30A9D1 ;
+}
+
+.container{
+    background-color:   #F4F6F3;
+    margin-top: 30px;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+.nondis {
+  display: none;
+}

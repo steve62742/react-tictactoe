@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start": "npm install | webpack | node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -20,6 +21,7 @@
     "express": "*",
     "express-session": "*",
     "grunt": "*",
+    "jquery": "^3.1.1",
     "jshint": "*",
     "lodash": "*",
     "moment": "*",
@@ -28,6 +30,15 @@
     "npm": "*",
     "randomstring": "*",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "react-s-alert": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "html-webpack-plugin": "^2.22.0",
+    "webpack": "^1.13.2"
   }
 }
