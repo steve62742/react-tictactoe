@@ -1,4 +1,3 @@
-// import React from 'react';
 var React = require('react');
 var Alert = require('react-s-alert') ;
 
@@ -10,7 +9,6 @@ var AlertBox = React.createClass({
 
     },
     handleConfirm() {
-        console.log('Customer confirmation!');
         this.props.handleClose();
     },
     handleClose() {

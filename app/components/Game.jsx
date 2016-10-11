@@ -1,4 +1,3 @@
-// import React from 'react';
 var React = require('react');
 
 var TileBox = require('./Tile.jsx');
@@ -32,23 +31,17 @@ var Game = React.createClass({
         for (var i =0; i < this.state.tiles.length; i++){
             newtiles.push( {number : this.state.tiles[i].number , status : "N"} );
         }
-
             this.setState({
                 clicks: 0 ,
                 turn : 0 ,
                 status : 1,
                 tiles : newtiles
             }  );
-
     },
 
     checkOnClick : function( number){
         if (number == -1 ){
             this.alertWrongClick();
-
-
-
-
         }else{
             var dumb = this.state.tiles;
             dumb[number].status =  ( (this.state.turn==0) ? "X" : "O" ) ;
@@ -58,10 +51,6 @@ var Game = React.createClass({
                 tiles : dumb
             } , this.checkWin() );
         }
-
-
-
-
     },
 
     alertWrongClick : function () {
@@ -81,9 +70,7 @@ var Game = React.createClass({
     },
 
     alertWin : function(winner){
-        //alert("o nikitis ine o "+winner+" se "+this.state.clicks+" girous");
-
-        Alert.info('<h2>Game Over  ' +winner+' wins!</h2>', {
+        Alert.success('<h2>Game Over  ' +winner+' wins!</h2>', {
             position: 'top-right',
             effect: 'slide',
             onShow: function () {
@@ -97,10 +84,6 @@ var Game = React.createClass({
                     final : true
                 }
         });
-
-
-
-
 
     },
 
@@ -184,23 +167,23 @@ var Game = React.createClass({
             }else{
                 this.alertWin("player 1");
             }
-        } else if ( this.state.tiles[0].status == this.state.tiles[1].status &&
-            this.state.tiles[0].status == this.state.tiles[2].status &&
-            this.state.tiles[0].status == this.state.tiles[3].status &&
-            this.state.tiles[0].status == this.state.tiles[4].status &&
-            this.state.tiles[0].status == this.state.tiles[5].status &&
-            this.state.tiles[0].status == this.state.tiles[6].status &&
-            this.state.tiles[0].status == this.state.tiles[7].status &&
-            this.state.tiles[0].status == this.state.tiles[8].status &&
-            this.state.tiles[0].status != "N"  ) {
-
+        } else if ( this.state.tiles[0].status != "N" &&
+            this.state.tiles[1].status != "N" &&
+            this.state.tiles[2].status != "N" &&
+            this.state.tiles[3].status != "N" &&
+            this.state.tiles[4].status != "N" &&
+            this.state.tiles[5].status != "N" &&
+            this.state.tiles[6].status != "N" &&
+            this.state.tiles[7].status != "N" &&
+            this.state.tiles[8].status != "N"
+              )
+        {
 
             this.setState({
                 status : 0
             }  );
             this.alertWin("No one");
         }
-
     },
 
     render: function() {

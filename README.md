@@ -6,5 +6,9 @@ A Sample application using React library, implementing a tic-tac-toe game.
 
 ```sh
 $ npm install
+$ webpack
 $ node server.js
+.
+.
+$ node start
 ```

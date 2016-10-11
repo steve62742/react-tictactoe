@@ -53,11 +53,6 @@
 
 	'use strict';
 
-	// import Game from './components/Game.jsx';
-	// import ReactDOM from 'react-dom';
-	// import 'jquery';
-	//import 'bootstrap/dist/js/bootstrap';
-
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(35);
 	var Game = __webpack_require__(173);
@@ -21437,7 +21432,6 @@
 
 	'use strict';
 
-	// import React from 'react';
 	var React = __webpack_require__(2);
 
 	var TileBox = __webpack_require__(174);
@@ -21463,7 +21457,6 @@
 	        for (var i = 0; i < this.state.tiles.length; i++) {
 	            newtiles.push({ number: this.state.tiles[i].number, status: "N" });
 	        }
-
 	        this.setState({
 	            clicks: 0,
 	            turn: 0,
@@ -21502,9 +21495,7 @@
 	    },
 
 	    alertWin: function alertWin(winner) {
-	        //alert("o nikitis ine o "+winner+" se "+this.state.clicks+" girous");
-
-	        Alert.info('<h2>Game Over  ' + winner + ' wins!</h2>', {
+	        Alert.success('<h2>Game Over  ' + winner + ' wins!</h2>', {
 	            position: 'top-right',
 	            effect: 'slide',
 	            onShow: function onShow() {
@@ -21600,7 +21591,7 @@
 	            } else {
 	                this.alertWin("player 1");
 	            }
-	        } else if (this.state.tiles[0].status == this.state.tiles[1].status && this.state.tiles[0].status == this.state.tiles[2].status && this.state.tiles[0].status == this.state.tiles[3].status && this.state.tiles[0].status == this.state.tiles[4].status && this.state.tiles[0].status == this.state.tiles[5].status && this.state.tiles[0].status == this.state.tiles[6].status && this.state.tiles[0].status == this.state.tiles[7].status && this.state.tiles[0].status == this.state.tiles[8].status && this.state.tiles[0].status != "N") {
+	        } else if (this.state.tiles[0].status != "N" && this.state.tiles[1].status != "N" && this.state.tiles[2].status != "N" && this.state.tiles[3].status != "N" && this.state.tiles[4].status != "N" && this.state.tiles[5].status != "N" && this.state.tiles[6].status != "N" && this.state.tiles[7].status != "N" && this.state.tiles[8].status != "N") {
 
 	            this.setState({
 	                status: 0
@@ -21642,7 +21633,6 @@
 
 	"use strict";
 
-	// import React from 'react';
 	var React = __webpack_require__(2);
 
 	var TileBox = React.createClass({
@@ -21679,7 +21669,7 @@
 	    render: function render() {
 	        return React.createElement(
 	            "div",
-	            { onClick: this.handleClick, className: "col-sm-4 cell " },
+	            { onClick: this.handleClick, className: "col-xs-4 cell " },
 	            React.createElement("img", { className: this.getClasses('N'), src: "public/img/clear.png" }),
 	            React.createElement("img", { className: this.getClasses('O'), src: "public/img/o.png" }),
 	            React.createElement("img", { className: this.getClasses('X'), src: "public/img/x.png" })
@@ -21695,7 +21685,6 @@
 
 	"use strict";
 
-	// import React from 'react';
 	var React = __webpack_require__(2);
 
 	var InfoBox = React.createClass({
@@ -21706,10 +21695,6 @@
 	        return { players: ["Player 1", "Player 2"] };
 	    },
 	    printPlayer: function printPlayer() {
-	        console.log("test");
-	        console.log(this.state.players[this.props.parentState.turn]);
-	        console.log("test");
-
 	        return this.state.players[this.props.parentState.turn];
 	    },
 
@@ -21718,7 +21703,6 @@
 	    },
 
 	    render: function render() {
-	        console.log(this.props.parentState);
 	        return React.createElement(
 	            "div",
 	            { className: "col-md-12 headercell " },
@@ -21793,7 +21777,6 @@
 
 	'use strict';
 
-	// import React from 'react';
 	var React = __webpack_require__(2);
 	var Alert = __webpack_require__(177);
 
@@ -21806,7 +21789,6 @@
 	        this.props.handleClose();
 	    },
 	    handleConfirm: function handleConfirm() {
-	        console.log('Customer confirmation!');
 	        this.props.handleClose();
 	    },
 	    handleClose: function handleClose() {

@@ -1,4 +1,3 @@
-// import React from 'react';
 var React = require('react');
 
 var TileBox = React.createClass({
@@ -9,7 +8,6 @@ var TileBox = React.createClass({
 
     handleClick: function() {
         if (this.props.parentState.status == 1){
-
 
             if (this.props.data.status == "N"){
                 this.props.onSelect(this.props.data.number);
@@ -25,7 +23,6 @@ var TileBox = React.createClass({
             }else{
                 this.props.onSelect(-1);
             }
-
         }
     },
     getClasses : function(status){
@@ -34,7 +31,7 @@ var TileBox = React.createClass({
 
   render: function() {
     return (
-        <div  onClick={this.handleClick}  className="col-sm-4 cell ">
+        <div  onClick={this.handleClick}  className="col-xs-4 cell ">
             <img className={this.getClasses('N')} src="public/img/clear.png" />
             <img className={this.getClasses('O')} src="public/img/o.png" />
             <img className={this.getClasses('X')} src="public/img/x.png" />

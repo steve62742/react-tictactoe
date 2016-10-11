@@ -1,6 +1,4 @@
-// import React from 'react';
 var React = require('react');
-
 
 var InfoBox = React.createClass({
 
@@ -8,10 +6,6 @@ var InfoBox = React.createClass({
     return { players : ["Player 1" , "Player 2"]    };
   },
   printPlayer : function(){
-    console.log("test");
-    console.log(this.state.players[this.props.parentState.turn]);
-    console.log("test");
-
     return this.state.players[this.props.parentState.turn];
   },
 
@@ -20,7 +14,6 @@ var InfoBox = React.createClass({
   },
 
   render: function() {
-    console.log(this.props.parentState);
     return (
         <div className="col-md-12 headercell ">
 
